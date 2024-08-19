@@ -1,1 +1,8 @@
+*  Go to project root path
+* python -m venv .env
+* .env/Scripts/activate
+* pip install pybuilder
+* pyb install_dependencies 
+* pyb
+* pyb run_server
 
