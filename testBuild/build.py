@@ -14,6 +14,7 @@ use_plugin("python.distutils")
 
 
 
+
 name = "testBuild"
 default_task = "publish"
 
@@ -21,10 +22,12 @@ default_task = "publish"
 def initialize(project):
     project.set_property('dir_source_main_python', 'src/main/python')
     project.set_property('dir_source_unittest_python', 'src/unittest/python')
-    project.build_depends_on("mockito")
-    project.build_depends_on("fastapi")
-    project.build_depends_on("uvicorn")
-    project.depends_on("requests") 
+    #project.build_depends_on("mockito")
+    #project.build_depends_on("fastapi")
+    #project.build_depends_on("uvicorn")
+    #project.depends_on("requests") 
+
+    project.depends_on_requirements("requirements.txt")
 
 @task
 def run_server(project):
