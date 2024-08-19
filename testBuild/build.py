@@ -1,6 +1,6 @@
 #   -*- coding: utf-8 -*-
 from pybuilder.core import use_plugin, init, task
-import uvicorn
+#import uvicorn
 import sys
 import os
 #from src.main.python import mian
@@ -16,7 +16,7 @@ use_plugin("python.distutils")
 
 
 name = "testBuild"
-default_task = "publish"
+default_task = ["publish"]
 
 @init
 def initialize(project):
@@ -28,10 +28,9 @@ def initialize(project):
     #project.depends_on("requests") 
 
     project.depends_on_requirements("requirements.txt")
-
 @task
 def run_server(project):
-    import uvicorn
+    import uvicorn;
     print('pathh  ', sys.path)
     print(f"dir_source_main_python is set to: {project.get_property('dir_source_main_python')}")
     sys.path.insert(0, os.path.abspath(project.get_property('dir_source_main_python')))

@@ -1,4 +1,3 @@
-install_dependencies
 mockito
 fastapi
 uvicorn
